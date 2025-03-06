@@ -31,6 +31,7 @@ func worker() {
 		if err != nil {
 			log.Print(err)
 			time.Sleep(1 * time.Second)
+			resp.Body.Close()
 			continue
 		}
 		defer resp.Body.Close()
